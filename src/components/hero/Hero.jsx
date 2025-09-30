@@ -55,9 +55,9 @@ function Hero() {
         <section className={styles.hero}>
             <div className={styles.heroContent}>
                 <motion.h1
-                    initial={{opacity:0, x: -50}}
-                    animate={{opacity:1, x: 0}}
-                    transition={{duration: 3}}
+                    initial={{opacity:0, y: 30}}
+                    animate={{opacity:1, y: 0}}
+                    transition={{duration: 1, ease: "easeOut"}}
                 >
                     Hola! <br/> Soy <span className={styles.name}>{name}</span>
                 </motion.h1>

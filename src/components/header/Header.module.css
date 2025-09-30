@@ -19,22 +19,22 @@
 /* Contenedor del logo */
 .logoContainer {
     position: relative;
-    width: 156px;
-    height: 50px;
-    overflow: hidden;
+    width: 200px;
+    height: 60px;
+    overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo {
-    color: var(--color-quaternary);
-    font-size: 2rem;
-    font-family: var(--font-tertiary);
-    font-weight: bold;
-    text-decoration: none;
-    position: absolute;
-    transition: opacity 0.5s ease-in-out;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out, transform 0.2s ease;
+    filter: brightness(0.8); 
 }
 
 .logoLink {
@@ -51,6 +51,10 @@
 
 .logoLink:hover {
     transform: scale(1.05);
+}
+
+.logoLink:hover .logo {
+    filter: brightness(1); /* Aumenta el brillo al hacer hover */
 }
 
 .logoLink:focus {
@@ -123,7 +127,7 @@ Responsive Design
     }
     
     .logo {
-        font-size: 1.8rem;
+        max-height: 60px;
     }
 }
 
@@ -153,10 +157,8 @@ Responsive Design
         color: var(--color-tertiary);
     }
     
-    
     .logo {
-        font-size: 1.5rem;
+        max-height: 60px;
+        max-width: 100px;
     }
-
-
 }

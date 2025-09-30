@@ -34,12 +34,14 @@ function CertificationsPage() {
                 <p className={styles.descriptionPage}>Explora mis certificaciones, cada una un testimonio de mi curiosidad y dedicación.</p>
             </div>
 
-            <div className={styles.filterButtons}>
-                <button onClick={() => setFilter('all')}>Todas</button>
-                <button onClick={() => setFilter('programacion')}>Programación</button>
-                <button onClick={() => setFilter('ciberseguridad')}>Ciberseguridad</button>
-                
-            </div>
+            <div className={styles.containerFilter}>
+                <div className={styles.filterButtons}>
+                    <button onClick={() => setFilter('all')}>Todas</button>
+                    <button onClick={() => setFilter('programacion')}>Programación</button>
+                    <button onClick={() => setFilter('ciberseguridad')}>Ciberseguridad</button>
+                    
+                </div>
+            </div>  
 
             <div className={styles.container}>
                 {filteredCertifications.map(certification => (
