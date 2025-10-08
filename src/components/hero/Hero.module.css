@@ -1,71 +1,105 @@
 .hero {
-    min-height: 520px;
+    min-height: auto;
     display: flex;
     align-items: center;
-    justify-content: start;
-    /*background-color: var(--color-primary);*/
+    justify-content: center;
     position: relative;
+    background-color: transparent;
+    padding: 1 0 4rem 0;
 }
 
 .heroContent {
+    max-width: 1200px;
     width: 100%;
-    text-align: start;
-    gap: 1rem;
-    padding-left: 4rem;
-    margin: 0;
+    text-align: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .heroContent h1 {
     color: var(--color-tertiary);
     font-family: var(--font-secondary);
     font-weight: 600;
-    font-size: 7rem;
-    line-height: 1.3;
-    margin: 0;
-    padding-top:80px;
+    font-size: var(--text-6xl);
+    line-height: var(--leading-tight);
+    margin: 0 0 1rem 0;
+    padding-top: 0.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: var(--tracking-tight);
 }
 
 .name{
     color: var(--color-fifthary);
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+    position: relative;
+}
+
+.name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-fifthary), rgba(124, 58, 237, 0.3));
+    border-radius: 2px;
 }
 
 .role {
-    color: var(--color-tertiary);
+    color: var(--color-quaternary);
     font-family: var(--font-primary);
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 1.5;
-    margin: 0;
-    padding-bottom: 20px;
+    font-weight: 300;
+    font-size: var(--text-xl);
+    line-height: var(--leading-normal);
+    margin: 0 0 2rem 0;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
 }
 
 .buttonContainer {
-    margin: 0;
+    margin: 2rem 0 1rem 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .downloadButton {
-    padding: 0.8rem 1rem;
-    background-color: var(--color-fifthary);
-    border: 1px solid var(--color-secondary);
-    color: var(--color-secondary);
-    border-radius: 13px;
+    padding: 14px 2.5rem;
+    background: linear-gradient(135deg, var(--color-fifthary) 0%, rgba(124, 58, 237, 0.9) 100%);
+    border: none;
+    color: var(--color-tertiary);
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.5s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-tertiary);
     font-size: 1.2rem;
-    margin:50px 0px;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
 .downloadButton:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-tertiary);
-    box-shadow: 0 0 5px var(--color-fifthary), 0 0 10px var(--color-fifthary), 0 0 30px var(--color-fifthary);
-
+    background: linear-gradient(135deg, rgba(124, 58, 237, 1) 0%, rgba(147, 51, 234, 0.95) 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
 }
+
+.downloadButton:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
 
 
 /*=====================
@@ -76,132 +110,496 @@ Responsive Design
 @media (min-width: 481px) and (max-width: 1024px) {
     .hero {
         min-height: 450px;
-        padding: 2rem 0;
+        padding: 3rem 0;
     }
 
     .heroContent {
-        padding-left: 3rem;
-        padding-right: 2rem;
+        padding: 0 3rem;
+        max-width: 900px;
+        gap: 2.5rem;
     }
 
     .heroContent h1 {
-        font-size: 5rem;
-        padding-top: 60px;
+        font-size: 4.5rem;
+        margin: 0 0 1.5rem 0;
+        padding-top: 0.3rem;
+    }
+
+    .name::after {
+        height: 2px;
+        bottom: -3px;
     }
 
     .role {
-        font-size: 1.8rem;
-        padding-bottom: 15px;
+        font-size: 1.5rem;
+        margin: 0 0 2rem 0;
+    }
+
+    .technologiesContainer {
+        margin: 2.5rem 0;
     }
 
     .buttonContainer {
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        margin: 2rem 0 1.5rem 0;
+        gap: 1.5rem;
     }
 
     .downloadButton {
         font-size: 1.1rem;
-        padding: 0.7rem 0.9rem;
-        margin: 40px 0px;
+        padding: 12px 2rem;
     }
 }
+
 
 /* Mobile (small screens) */
 @media (max-width: 480px) {
     .hero {
         min-height: 400px;
-        padding: 1rem 0;
-        justify-content: center;
+        padding: 0;
     }
 
     .heroContent {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        text-align: center;
+        padding: 0 1.5rem;
+        gap: 2rem;
     }
 
     .heroContent h1 {
-        font-size: 3rem;
-        padding-top: 40px;
-        line-height: 1.2;
+        font-size: var(--text-4xl);
+        line-height: var(--leading-tight);
+        margin: 0 0 1rem 0;
+        padding-top: 0.2rem;
+        letter-spacing: var(--tracking-tight);
     }
 
-    .name {
-        display: block;
-        margin-top: 0.5rem;
+    .name{
+        color: var(--color-fifthary);
+        text-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+        position: relative;
+        display: inline-block;
     }
-
+    
+    .name::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-fifthary), rgba(124, 58, 237, 0.3));
+        border-radius: 2px;
+    }
+    
     .role {
-        font-size: 1.3rem;
-        padding: 40px 0px;
-        text-align: center;
+        font-size: var(--text-base);
+        margin: 1.5rem 0 1.5rem 0;
+        letter-spacing: var(--tracking-normal);
+    }
+
+    .technologiesContainer {
+        margin: 1.5rem 0;
     }
 
     .buttonContainer {
-        justify-content: center;
         flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
+        gap: 1.2rem;
+        margin: 1.8rem 0 0 0;
+        width: 100%;
     }
 
     .downloadButton {
-        width: 80%;
+        width: 100%;
         max-width: 280px;
         font-size: 1rem;
-        padding: 0.8rem 1rem;
-        margin: 20px 0px;
-        margin-top: 10px;
-        text-align: center;
+        padding: 12px 1.5rem;
+        justify-content: center;
+    }
+
+    .socialLinks {
+        margin-top: 0.8rem;
     }
 }
 
+
 /* Extra small screens */
-@media (max-width: 320px) {
+@media (max-width: 360px) {
     .hero {
         min-height: 350px;
+        padding: 1.5rem 0;
     }
 
     .heroContent {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0 1rem;
+        gap: 1.5rem;
     }
 
     .heroContent h1 {
-        font-size: 2.5rem;
-        padding-top: 30px;
+        font-size: var(--text-3xl);
+        margin: 0 0 0.8rem 0;
     }
 
     .role {
-        font-size: 1.3rem;
+        font-size: var(--text-sm);
+        margin: 1rem 0 1rem 0;
+    }
+
+    .technologiesContainer {
+        margin: 1.2rem 0;
+    }
+
+    .buttonContainer {
+        margin: 1.5rem 0 0 0;
     }
 
     .downloadButton {
-        width: 90%;
-        font-size: 0.9rem;
-        padding: 0.7rem 0.8rem;
-        margin: 20px 0px;
+        font-size: 0.95rem;
+        padding: 10px 1.2rem;
+        max-width: 240px;
     }
 }
 
 /* Large screens optimization */
 @media (min-width: 1400px) {
+    .hero {
+        padding: 1.5rem 0;
+    }
+
     .heroContent {
-        padding-left: 4rem;
+        max-width: 1400px;
+        padding: 0 4rem;
+        gap: 3rem;
     }
 
     .heroContent h1 {
         font-size: 7rem;
-        padding-top: 100px;
+        margin: 0 0 2rem 0;
+    }
+
+    .name::after {
+        height: 4px;
+        bottom: -5px;
     }
 
     .role {
         font-size: 2rem;
-        padding-bottom: 25px;
+        margin: 0 0 3rem 0;
+    }
+
+    .technologiesContainer {
+        margin: 3rem 0;
+    }
+
+    .buttonContainer {
+        margin: 3rem 0 2rem 0;
+        gap: 2rem;
     }
 
     .downloadButton {
         font-size: 1.3rem;
-        padding: 1rem 1.2rem;
-        margin: 20px 0px;
+        padding: 16px 3rem;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 300px;
+        padding: 1.5rem 0;
+    }
+
+    .heroContent {
+        gap: 1.5rem;
+    }
+
+    .heroContent h1 {
+        font-size: 2.5rem;
+        margin: 0 0 0.8rem 0;
+    }
+
+    .role {
+        font-size: 1rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .technologiesContainer {
+        margin: 1.2rem 0;
+    }
+
+    .buttonContainer {
+        margin: 1.2rem 0 1rem 0;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .downloadButton {
+        padding: 10px 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* Tecnologías */
+.technologiesContainer {
+    margin: 2.5rem 0;
+}
+
+.technologiesGrid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.techBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.techBadge i {
+    font-size: 1.5rem;
+}
+
+.techBadge span {
+    font-size: 0.9rem;
+    color: var(--color-tertiary);
+    font-family: var(--font-tertiary);
+}
+
+/* Redes Sociales */
+.socialLinks {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.socialLink {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-tertiary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.socialLink:hover {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: var(--color-fifthary);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+.socialLink i {
+    transition: transform 0.3s ease;
+}
+
+.socialLink:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive para tecnologías y redes sociales */
+@media (max-width: 768px) {
+    .technologiesContainer {
+        margin: 2rem 0;
+    }
+
+    .technologiesGrid {
+        gap: 0.8rem;
+    }
+
+    .techBadge {
+        padding: 0.5rem 1rem;
+    }
+
+    .techBadge i {
+        font-size: 1.3rem;
+    }
+
+    .techBadge span {
+        font-size: 0.85rem;
+    }
+
+    .socialLinks {
+        gap: 0.8rem;
+        justify-content: center;
+    }
+
+    .socialLink {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .technologiesContainer {
+        margin: 1.5rem 0;
+    }
+
+    .technologiesGrid {
+        gap: 0.6rem;
+    }
+
+    .techBadge {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .techBadge i {
+        font-size: 1.2rem;
+    }
+
+    .techBadge span {
+        font-size: 0.8rem;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialLinks {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .socialLink {
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Animación para los badges de tecnología */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.techBadge:hover {
+    animation: float 1s ease-in-out infinite;
+}
+
+/* Efecto de pulso para redes sociales */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
+}
+
+.socialLink:active {
+    animation: pulse 0.5s;
+}
+
+/* Mejora visual para el contenedor de botones */
+.buttonContainer {
+    position: relative;
+}
+
+.buttonContainer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buttonContainer:hover::before {
+    opacity: 1;
+}
+
+/* Estilos adicionales para landscape en tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        padding: 1rem 0;
+    }
+
+    .heroContent h1 {
+        font-size: 3.5rem;
+    }
+
+    .role {
+        font-size: 1.3rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .technologiesContainer {
+        margin: 1.5rem 0;
+    }
+
+    .buttonContainer {
+        margin: 1.5rem 0 1rem 0;
+        flex-direction: row;
+    }
+}
+
+/* Optimización para pantallas ultra anchas */
+@media (min-width: 1920px) {
+    .heroContent {
+        max-width: 1600px;
+    }
+
+    .heroContent h1 {
+        font-size: 8rem;
+    }
+
+    .role {
+        font-size: 2.2rem;
+    }
+
+    .technologiesGrid {
+        gap: 1.5rem;
+    }
+
+    .techBadge {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .techBadge i {
+        font-size: 1.8rem;
+    }
+
+    .techBadge span {
+        font-size: 1rem;
+    }
+
+    .socialLink {
+        width: 50px;
+        height: 50px;
+        font-size: 1.7rem;
+    }
+
+    .downloadButton {
+        font-size: 1.4rem;
+        padding: 18px 3.5rem;
     }
 }

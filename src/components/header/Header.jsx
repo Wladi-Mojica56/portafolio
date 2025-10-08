@@ -58,14 +58,17 @@ function Header() {
             <div className={styles.contactContainer}>
 
                 <motion.button
-                href="#contact" 
+                onClick={() => window.open('https://wa.me/573001234567?text=Hola!%20Vi%20tu%20portafolio%20y%20me%20interesa%20contactarte', '_blank')}
                 className={styles.contact}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3}}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 >
-                    <span className={styles.contactText}>Contacto</span>
+                    <span className={styles.contactText}>
+                        Contacto
+                    </span>
                 </motion.button>
 
             </div>

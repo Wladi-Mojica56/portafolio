@@ -1,195 +1,450 @@
 .projectsSection {
-    padding: 2.5rem 1rem 2.5rem 1rem;
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .sectionTitle{
     text-align: center;
     font-family: var(--font-secondary);
-    margin: 0;
-    font-size: 2.6rem;
+    margin: 0 0 1rem 0;
+    font-size: 3rem;
     color: var(--color-tertiary);
-
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .sectionDescription{
     font-family: var(--font-secondary);
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--color-fifthary);
-    margin: 0 0 3rem 0;
-
+    margin: 0 0 4rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .projectsGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .projectCard {
     background: var(--color-primary);
-    border-radius: 1.2rem;
-    transition: transform 0.18s, box-shadow 0.18s;
+    border-radius: 1.5rem;
+    overflow: hidden;
     border: 1.5px solid var(--color-secondary);
-    max-width: 500px;
-    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    will-change: transform;
+    transform: translateZ(0);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
+/* Contenedor de imagen sin overlay */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: var(--color-secondary);
 }
 
 .projectCard img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 0.8rem 0.8rem 0 0;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 12px 0 rgba(79,140,255,0.07);
-    background: var(--color-secondary);
-    position: relative;
-    overflow: hidden;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Efecto zoom en la imagen al hacer hover en la card */
+.projectCard:hover img {
+    transform: scale(1.05);
 }
 
 .projectLinks{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
+    padding: 2rem;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .projectCard h3 {
     color: var(--color-tertiary);
     font-family: var(--font-tertiary);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    text-align: center;
-    letter-spacing: 0.5px;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
 }
 
 .projectCard p {
     color: var(--color-quaternary);
     font-family: var(--font-primary);
     font-size: 1.05rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+    flex: 1;
 }
 
-/*******************************/
-
+/* Tech Tags */
 .techTags {
     display: flex;
     gap: 0.7rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .techTag {
     background: var(--color-fifthary);
     color: var(--color-tertiary);
-    font-size: 0.97rem;
-    padding: 0.35rem 1rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
     border-radius: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
     border: none;
-    margin-bottom: 0.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
+.techTag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones de acción */
 .buttons{
-    margin-top: 1rem;
+    margin-top: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .button{
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-size: 1rem;
     border: 1px solid var(--color-tertiary);
-    border-radius: 15px;
+    border-radius: 12px;
     cursor: pointer;
     background-color: transparent;
     color: var(--color-quaternary);
     font-family: var(--font-primary);
-    margin: 0;
-    margin-bottom: 1rem;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    min-width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
 }
 
 .button:hover {
     background-color: var(--color-secondary);
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
     border: 1px solid var(--color-fifthary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.button:hover i {
+    transform: translateX(3px);
+}
+
+/* Contenedor para centrar el botón */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* Botón Ver Todos */
 .viewAllButton{
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: 1px solid var(--color-tertiary);
-    border-radius: 15px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-tertiary);
+    border-radius: 12px;
     cursor: pointer;
     background-color: transparent;
     color: var(--color-quaternary);
     font-family: var(--font-primary);
-    margin: 2rem auto;
-    display: block;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.viewAllButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.viewAllButton:hover::before {
+    left: 100%;
+}
+
+.viewAllButton i {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
 }
 
 .viewAllButton:hover {
     background-color: var(--color-secondary);
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--color-fifthary);
+    border-color: var(--color-fifthary);
+    transform: translateY(-2px);
 }
 
+.viewAllButton:hover i {
+    transform: translateX(5px);
+}
 
-
-/* Element En Desarrollo */
-
+/* Badge En Desarrollo */
 .developmentStatus {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: auto;
 }
 
 .developmentBadge {
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-size: 1rem;
-    border: 1px solid var(--color-fifthary);
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: transparent;
+    border: 1.5px solid var(--color-fifthary);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--color-fifthary);
     font-family: var(--font-primary);
-    margin: 0;
-    margin-bottom: 1rem;
-    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: default;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .developmentBadge {
-        font-size: 1.1rem;
-        padding: 1.2rem;
+.developmentBadge i {
+    font-size: 1.1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
     }
-    
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projectsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projectsSection {
+        padding: 3rem 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 2.5rem;
+    }
+
+    .sectionDescription {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .projectsGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .imageContainer {
+        height: 240px;
+    }
+
+    .projectCard h3 {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 0.8rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .button {
+        flex: 1;
+        min-width: 120px;
+        max-width: 150px;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .developmentBadge {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .viewAllButton {
+        font-size: 1rem;
+        padding: 12px 28px;
+    }
+
+    .viewAllButton i {
+        font-size: 1.1rem;
+    }
+
+    .buttonContainer {
+        margin-top: 2.5rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .developmentStatus {
-        margin-top: 0.8rem;
+    .sectionTitle {
+        font-size: 2rem;
     }
-    
-    .developmentBadge {
+
+    .sectionDescription {
         font-size: 1.1rem;
-        padding:  1rem;
-        gap: 0.4rem;
+    }
+
+    .projectCard h3 {
+        font-size: 1.4rem;
+    }
+
+    .projectCard p {
+        font-size: 1rem;
+    }
+
+    .techTags {
+        justify-content: center;
+    }
+
+    .techTag {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.9rem;
+    }
+
+    .button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        min-width: 100px;
+        max-width: 130px;
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .viewAllButton {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+        gap: 0.6rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .viewAllButton i {
+        font-size: 1rem;
+    }
+
+    .developmentBadge {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
+
+    .buttonContainer {
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .buttons {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        font-size: 0.8rem;
+        padding: 8px 10px;
     }
 }

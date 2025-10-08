@@ -1,4 +1,6 @@
-import interview from '../../../src/Imgs/interview.png';
+import interview from '../../../src/Imgs/portada1.png';
+import wladcore from '../../../src/Imgs/portada2.png';
+import whitehunters from '../../../src/Imgs/portada3 (2).png';
 
 const projectsData = [
     {
@@ -9,13 +11,23 @@ const projectsData = [
         liveUrl: 'https://formlogin-bcd6d.firebaseapp.com/',
         githubUrl: 'https://github.com/Wladi-Mojica56',
         technologies: ['React', 'CSS', 'Node.js', 'Firebase', 'Gemini AI'],
-        status: 'Completo'
+        status: 'Completado'
     },
     {
         id: 2,
-        title: 'Assistant AI',
-        description: 'Asistente Virtual Potenciado por AI',
-        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
+        title: 'Startup WladCore',
+        description: 'Plataforma Web Enfocada en el Desarollo Web',
+        image: wladcore,
+        liveUrl: 'https://example.com/project-two',
+        githubUrl: 'https://github.com/usuario/project-two',
+        technologies: ['Javascript', 'CSS', 'Node.js', 'Firebase', 'Gemini AI'],
+        status: 'En desarrollo'
+    },
+    {
+        id: 3,
+        title: 'Startup WhiteHunters',
+        description: 'Plataforma Web Enfocada en Pentesting',
+        image: whitehunters,
         liveUrl: 'https://example.com/project-two',
         githubUrl: 'https://github.com/usuario/project-two',
         technologies: ['Javascript', 'CSS', 'Node.js', 'Firebase', 'Gemini AI'],

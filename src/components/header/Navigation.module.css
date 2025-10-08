@@ -17,7 +17,7 @@
 .navLink {
     text-decoration: none;
     color: var(--color-tertiary);
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     font-family: 'Bebas Neue', sans-serif;
     position: relative;
     overflow: hidden;
@@ -48,7 +48,7 @@
     background: none;
     border: none;
     color: var(--color-tertiary);
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     cursor: pointer;
     padding: 0.5rem;
 }
@@ -80,7 +80,7 @@
 
 .socialIcon {
     color: var(--color-primary);
-    font-size: 1.8rem;
+    font-size: var(--text-3xl);
     transition: transform 0.3s ease-in-out, color 0.3s ease;
     display: flex;
     align-items: center;
@@ -147,7 +147,7 @@
 
     /* Navigation link styling for tablet */
     .navLink {
-        font-size: 1.5rem;
+        font-size: var(--text-2xl);
         color: var(--color-primary);
     }
     
@@ -166,7 +166,7 @@
     /* Social icon styling for tablet */
     .socialIcon {
         background-color:transparent;
-        font-size: 1.5rem;
+        font-size: var(--text-2xl);
         width: 2rem;
         height: 2rem;
     }

@@ -1,3 +1,4 @@
+
 /*=====================
 Main Certifications Section
 =======================*/
@@ -7,40 +8,26 @@ Main Certifications Section
     margin: 0 auto;
 }
 
-/* Section Title */
+/* Section Title - Mantener Bebas Neue para impacto visual */
 .certificationsSection h2 {
     text-align: center;
-    font-family: var(--font-secondary);
+    font-family: var(--font-secondary); /* Bebas Neue - Correcto para títulos */
     margin: 5rem 0 0 0;
-    font-size: 2.6rem;
+    font-size: var(--text-5xl);
     color: var(--color-tertiary);
+    letter-spacing: var(--tracking-wide);
 }
 
-.certDescription{
-    font-family: var(--font-secondary);
-    font-weight: 100;
+/* Descripción - CAMBIAR a fuente más legible */
+.certDescription {
+    font-family: var(--font-primary); /* Inter - Mejor para lectura */
+    font-weight: 400; /* Peso normal para mejor legibilidad */
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
     color: var(--color-fifthary);
-    margin: 0;
-    margin-bottom: 3rem;
-}
-
-
-/*=====================
-Swiper Carousel Configuration
-=======================*/
-.certificationsSwiper {
-    padding: 3rem 0; /* Space for pagination */
-    margin: 0 -1rem;
-    overflow: visible;
-}
-
-/* Slide Container */
-.certSlide {
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    margin: 1rem auto 3rem;
+    max-width: 600px; /* Limitar ancho para mejor lectura */
 }
 
 /*=====================
@@ -58,12 +45,6 @@ Certification Card
     flex-direction: column;
 }
 
-/* Hover Effect for Cards */
-.certCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
 /* Certificate Image */
 .certCard img {
     width: 100%;
@@ -75,12 +56,15 @@ Certification Card
 /*=====================
 Certificate Information
 =======================*/
-.cardtitle{
-    font-family: var(--font-tertiary);
-    font-size: 1.2rem;
+/* Título de la tarjeta - Geist Mono es apropiado para tech/code */
+.cardtitle {
+    font-family: var(--font-tertiary); /* Geist Mono - Correcto */
+    font-size: var(--text-xl);
+    font-weight: 500; /* Aumentar peso para mejor legibilidad */
     color: var(--color-tertiary);
     text-align: center;
     margin: 0.5rem 0;
+    line-height: 1.4;
 }
 
 .certInfo {
@@ -88,204 +72,109 @@ Certificate Information
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
+    flex: 1; /* Permitir que crezca */
 }
 
-/* Certificate Title */
-.certInfo h3 {
-    margin: 0;
-    font-size: 1.4rem;
-}
-
-/* Issuing Entity */
+/* Issuing Entity - Inter es perfecto para metadata */
 .issuer {
+    font-family: var(--font-primary); /* Inter - Correcto */
     font-weight: 500;
     color: var(--color-fifthary);
     padding-bottom: 3rem;
-    font-size: 1.1rem;
-    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    text-align: center;
+    line-height: var(--leading-normal);
 }
 
-
-
-/* Button View More*/
-
-.viewMoreButton{
+/* Button View More - Inter para UI elements */
+.viewMoreButton {
     padding: 12px 24px;
-    font-size: 1rem;
+    font-size: var(--text-base);
+    font-family: var(--font-primary); /* Inter - Correcto */
+    font-weight: 500; /* Aumentar peso para botones */
     border: 1px solid var(--color-tertiary);
     border-radius: 15px;
     cursor: pointer;
     background-color: transparent;
     color: var(--color-quaternary);
-    font-family: var(--font-primary);
     margin: 0;
     margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
-
 
 .viewMoreButton:hover {
     background-color: var(--color-secondary);
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
     border: 1px solid var(--color-fifthary);
-
+    transform: translateY(-2px); /* Añadir feedback visual */
 }
 
-/*=====================
-Swiper Controls Customization
-=======================*/
-/* Pagination Bullets */
-:global(.swiper-pagination-bullet) {
-    background-color: var(--color-tertiary);
-    opacity: 0.5;
-}
-
-/* Active Bullet */
-:global(.swiper-pagination-bullet-active) {
-    background-color: var(--color-secondary);
-    opacity: 1;
-}
-
-/* Style for All Slides - Add Opacity Transition */
-:global(.swiper-slide) {
-    opacity: 0.6; /* Non-active slides slightly transparent */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and transformation */
-}
-
-/* Style for Active/Central Slide */
-:global(.swiper-slide-active) {
-    opacity: 1; /* Active slide fully visible */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-:global(.swiper-slide-active) .certCard {
-    transform: scale(1);
-    z-index: 2;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease; /* Make the transition slower */
-}
-
-/* Style for Adjacent Slides to the Active One */
-:global(.swiper-slide-prev),
-:global(.swiper-slide-next) {
-    opacity: 0.8; /* Adjacent slides more visible than others */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/*=====================
-Responsive Design
-=======================*/
-
-/* Tablets (medium screens) */
-@media (max-width: 768px) {
-    /* Spacing adjustments for tablets */
-    
-    /* Reduce title size */
-    .certificationsSection h2 {
-        font-size: 2rem;
-
-    }
-    
-    /* Adjustments for active slide on tablets */
-    :global(.swiper-slide-active) .certCard {
-        transform: scale(1.1);
-    }
-}
-
-/* Mobile (small screens) */
-@media (max-width: 480px) {
-    /* Further reduction of title size */
-    .certificationsSection h2 {
-        font-size: 1.8rem;
-        padding-bottom: 1rem;
-    }
-    
-    /* Adjustments for main container on mobile */
-    .certificationsSection {
-        overflow-x: hidden; /* Prevent horizontal overflow */
-    }
-    
-    /* Adjustments for Swiper on mobile */
-    .certificationsSwiper {
-        padding: 2rem 0;
-        margin: 0 auto; /* Center the swiper */
-        max-width: 100%; /* Limit maximum width */
-        overflow: hidden; /* Control overflow */
-    }
-    
-    /* Slide Container */
-    .certSlide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    /* Card size adjustment */
-    .certCard {
-        width: 90%; /* Reduce width for better fit */
-        margin: 0 auto; /* Center the card */
-        max-width: 280px; /* Set a maximum width */
-    }
-    
-    /* Reduce image height */
-    .certCard img {
-        height: 180px;
-    }
-    
-
-    /* Restore internal padding */
-    .certInfo {
-        padding: 1rem; /* Restore some padding for better readability */
-    }
-    
-    /* Certificate title size adjustment */
-    .certInfo h3 {
-        font-size: 1.1rem;
-    }
-    .viewMoreButton{
-        font-size: 0.75rem;
-    }
-
-
-    
-    /* Remove scale on mobile to prevent overflow */
-    :global(.swiper-slide-active) .certCard {
-        transform: scale(1);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        transition: all 0.5s ease;
-    }
-    
-    /* Ensure non-active slides are correctly positioned with smooth transition */
-    :global(.swiper-slide) {
-        display: flex;
-        justify-content: center;
-        opacity: 0.7;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    
-    :global(.swiper-slide-active) {
-        opacity: 1;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-}
-
-.viewAllButton{
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: 1px solid var(--color-tertiary);
+/* Button View All - Consistente con viewMoreButton */
+.viewAllButton {
+    padding: 14px 28px; /* Ligeramente más grande */
+    font-size: 1.1rem;
+    font-family: var(--font-primary); /* Inter - Correcto */
+    font-weight: 600; /* Más peso para CTA principal */
+    border: 2px solid var(--color-tertiary); /* Borde más grueso */
     border-radius: 15px;
     cursor: pointer;
     background-color: transparent;
     color: var(--color-quaternary);
-    font-family: var(--font-primary);
     margin: 2rem auto;
     display: block;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .viewAllButton:hover {
     background-color: var(--color-secondary);
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--color-fifthary);
+    border: 2px solid var(--color-fifthary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*=====================
+Responsive Design
+=======================*/
+@media (max-width: 768px) {
+    .certificationsSection h2 {
+        font-size: 2rem;
+    }
+    
+    .certDescription {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificationsSection h2 {
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+    }
+    
+    .certDescription {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cardtitle {
+        font-size: 1.1rem;
+    }
+    
+    .issuer {
+        font-size: 0.9rem;
+        padding-bottom: 2rem;
+    }
+    
+    .viewMoreButton {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    
+    .viewAllButton {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
 }

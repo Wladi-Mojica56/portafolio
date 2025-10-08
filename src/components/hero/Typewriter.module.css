@@ -1,12 +1,15 @@
 .typewriterText {
     font-family: var(--font-tertiary);
     font-weight: 300;
-    color: var(--color-tertiary);
-    font-size: 1.3rem;
-    line-height: 1.5;
+    color: var(--color-quaternary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     white-space: pre-line;
-    margin: 0;
-    padding-bottom: 40px;
+    margin: 1.75rem 0 1.2rem 0;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: var(--tracking-normal);
 }
 
 .cursor {
@@ -14,8 +17,10 @@
     width: 3px;
     height: 1em;
     margin-left: 5px;
-    background-color: currentColor;
+    background: linear-gradient(180deg, var(--color-fifthary), rgba(124, 58, 237, 0.7));
+    border-radius: 2px;
     animation: blink 1s step-end infinite;
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
 }
 
 @keyframes blink {
@@ -24,5 +29,28 @@
     }
     50% {
         background-color: currentColor;
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .typewriterText {
+        font-size: var(--text-base);
+        padding-bottom: 30px;
+        line-height: var(--leading-normal);
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriterText {
+        font-size: var(--text-sm);
+        padding-bottom: 20px;
+        line-height: var(--leading-normal);
+    }
+}
+
+@media (max-width: 360px) {
+    .typewriterText {
+        font-size: var(--text-xs);
+        padding-bottom: 15px;
     }
 }

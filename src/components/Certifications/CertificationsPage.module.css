@@ -1,3 +1,11 @@
+/* Wrapper principal */
+.pageWrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 /* Header de la página */
 .headerPage {
     width: 100%;
@@ -6,12 +14,15 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .titlePage {
     text-align: center;
     font-family: var(--font-secondary);
-    font-size: 3rem;
+    font-size: var(--text-5xl);
     color: var(--color-tertiary);
     margin: 0 0 1rem 0;
 }
@@ -20,7 +31,7 @@
     font-family: var(--font-secondary);
     font-weight: 100;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     color: var(--color-fifthary);
     margin: 0;
     margin-bottom: 3rem;
@@ -34,19 +45,25 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0 1rem;
 }
 
 .filterButtons {
-    width: 60%;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .filterButtons button {
     padding: 12px 24px;
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     border: 1px solid var(--color-tertiary);
     border-radius: 15px;
     cursor: pointer;
@@ -54,12 +71,22 @@
     color: var(--color-quaternary);
     font-family: var(--font-primary);
     margin: 0;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+    box-sizing: border-box;
 }
 
 .filterButtons button:hover {
     background-color: var(--color-secondary);
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
+    border: 1px solid var(--color-fifthary);
+}
+
+.filterButtons button.active {
+    background-color: var(--color-fifthary);
+    color: var(--color-tertiary);
     border: 1px solid var(--color-fifthary);
 }
 
@@ -70,6 +97,9 @@
     justify-content: center;
     gap: 20px;
     padding: 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 /* Tarjeta de certificación */
@@ -79,8 +109,14 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .certificationCard:hover {
@@ -88,10 +124,38 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Contenedor de imagen */
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificationCard:hover .imageWrapper img {
+    transform: scale(1.05);
+}
+
 .image {
     width: 100%;
     height: auto;
     border-bottom: 1px solid var(--color-quaternary);
+}
+
+.cardContent {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
 }
 
 .title {
@@ -105,58 +169,114 @@
 .issuer {
     font-weight: 500;
     color: var(--color-fifthary);
-    padding-bottom: 3rem;
     font-size: 1.1rem;
     font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* Botones */
 .buttons {
     display: flex;
-    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding: 0.75rem;
+    margin-top: auto;
+}
+
+.buttons.singleButton {
+    justify-content: center;
 }
 
 .viewMoreButton {
     padding: 12px 24px;
     font-size: 1rem;
-    border: 1px solid var(--color-tertiary);
+    border: 2px solid var(--color-fifthary);
     border-radius: 15px;
     cursor: pointer;
-    background-color: transparent;
-    color: var(--color-quaternary);
+    background: linear-gradient(135deg, var(--color-fifthary), #9333ea);
+    color: var(--color-tertiary);
     font-family: var(--font-primary);
+    font-weight: 600;
     margin: 0;
-    margin-bottom: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
 .viewMoreButton:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--color-fifthary);
+    background: linear-gradient(135deg, #9333ea, var(--color-fifthary));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
 }
 
 .link {
     padding: 12px 24px;
     font-size: 1rem;
-    border: 1px solid var(--color-fifthary);
+    border: 2px solid var(--color-fifthary);
     border-radius: 15px;
     cursor: pointer;
-    background-color: var(--color-fifthary);
-    color: var(--color-tertiary);
+    background-color: transparent;
+    color: var(--color-fifthary);
     font-family: var(--font-primary);
+    font-weight: 600;
     margin: 0;
-    margin-bottom: 1rem;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .link:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-fifthary);
+    color: var(--color-tertiary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* Loading state */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.loader {
+    font-size: 3rem;
     color: var(--color-fifthary);
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--color-fifthary);
+}
+
+/* Estado vacío */
+.emptyState {
+    width: 100%;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--color-quaternary);
+}
+
+.emptyState i {
+    font-size: 4rem;
+    color: var(--color-fifthary);
+    margin-bottom: 1rem;
+}
+
+.emptyState h3 {
+    font-size: 1.5rem;
+    color: var(--color-tertiary);
+    margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+    font-size: 1.1rem;
 }
 
 /* Responsive Design */
@@ -164,8 +284,9 @@
 /* Tablets (medium screens) */
 @media (max-width: 768px) {
     .headerPage {
-        padding: 0;
+        padding: 1.5rem;
     }
+    
     .titlePage {
         font-size: 2.5rem;
     }
@@ -174,48 +295,24 @@
         font-size: 1.3rem;
     }
 
+    .filterButtons {
+        width: 100%;
+        max-width: 500px;
+        padding: 0 1rem;
+    }
+
     .filterButtons button {
         font-size: 1rem;
         padding: 10px 20px;
     }
 
     .certificationCard {
-        width: 90%;
+        width: 100%;
+        max-width: 350px;
+        min-width: 280px;
+    }
+    .buttons {
+        flex-wrap: wrap;
     }
 }
 
-/* Mobile (small screens) */
-@media (max-width: 530px) {
-
-    .headerPage {
-        padding: 0;
-    }
-    .titlePage {
-        font-size: 2rem;
-    }
-
-    .descriptionPage {
-        font-size: 1.2rem;
-    }
-
-    .filterButtons {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .filterButtons button {
-        width: 100%;
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    .certificationCard {
-        width: 100%;
-    }
-
-    .viewMoreButton, .link {
-        font-size: 0.9rem;
-        padding: 15px;
-        gap: 0.5rem;
-    }
-}

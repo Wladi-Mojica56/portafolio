@@ -11,6 +11,28 @@
     --font-primary: "Inter", sans-serif;
     --font-secondary: 'Bebas Neue', sans-serif;
     --font-tertiary: 'Geist Mono', sans-serif;
+    
+    /* Sistema Tipográfico Armonizado */
+    --text-xs: 0.75rem;      /* 12px - Texto muy pequeño */
+    --text-sm: 0.875rem;      /* 14px - Texto pequeño */
+    --text-base: 1rem;        /* 16px - Texto base */
+    --text-lg: 1.125rem;      /* 18px - Texto grande */
+    --text-xl: 1.25rem;       /* 20px - Subtítulos */
+    --text-2xl: 1.5rem;       /* 24px - Títulos sección */
+    --text-3xl: 1.875rem;     /* 30px - Títulos principales */
+    --text-4xl: 2.25rem;      /* 36px - Hero móvil */
+    --text-5xl: 3rem;         /* 48px - Hero desktop */
+    --text-6xl: 3.75rem;      /* 60px - Hero grande */
+    
+    /* Line Heights */
+    --leading-tight: 1.2;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.6;
+    
+    /* Letter Spacing */
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
 }
 
 
